@@ -1,0 +1,18 @@
+{% extends "qtsapp/base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <p class="text">{{ quote.quote }}</p>
+    <p>by <small class="author">{{ author.fullname }}</small></p>
+    <p>Tags:</p>
+    <ul>
+        {% for tag in quote.tags %}
+        <li>{{ tag }}</li>
+        {% empty %}
+        <li>No tags available</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
